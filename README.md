@@ -11,6 +11,12 @@ clone this repo and run:
 npm install
 
 
+## Wiring
+![Alt text](https://raw.githubusercontent.com/Jan-Bart/Thermostaat/master/doc/schema.png "Wiring schema")
+
+## Screenshots
+![Alt text](https://raw.githubusercontent.com/Jan-Bart/Thermostaat/master/doc/screens.jpg "Screenshots")
+
 ## Notes
 
 You need to be root to run an application on a port under 1024
