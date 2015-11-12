@@ -1,0 +1,21 @@
+{
+  "name": "Thermostaat",
+  "version": "0.1.0",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "test": "make test"
+  },
+  "description": "A little app that shows current temperature and humidity",
+  "dependencies": {
+    "cookie-parser": "^1.4.0",
+    "cps": "^1.0.2",
+    "ejs": "^2.3.4",
+    "express": "^4.12.4",
+    "jade": "^1.11.0",
+    "node-mysql": "^0.4.2",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.3.5"
+  },
+  "bundleDependencies": []
+}

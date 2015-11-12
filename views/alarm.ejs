@@ -1,0 +1,46 @@
+<% include head %>
+
+<div class="row vertical-center">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    <div class="frame">
+      <a class="btn btn-default btn-settings" href="/graph" role="button">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      </a>
+      <h2>Huiskamer</h2>
+      <hr/>
+      <h1 id="alarm-header">OK </h1>
+      <hr/>
+      <div class="last-alarm" style="color:#a94442;">
+        <h2>
+          <span id="last-alarm-date"><%= lastAlarmDate %></span>
+          <span class="glyphicon glyphicon-time alarm-icon" aria-hidden="true"></span>
+          <span id="last-alarm-time"><%= lastAlarmTime %></span>
+        </h2>
+      </div>
+      <% include navigation %>
+    </div>
+  </div>
+</div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+<script>
+  var socket = io();
+  socket.on('alarm-change',function (msg) {
+    alarmHeader = document.getElementById("alarm-header");
+    if (msg.alarm) {
+      var glyphicon = document.createElement('span');
+      glyphicon.setAttribute('class','glyphicon glyphicon glyphicon-alert');
+      alarmHeader.textContent = 'Alarm ';
+      alarmHeader.appendChild(glyphicon);
+      alarmHeader.style.color = 'rgb(251, 78, 78)';
+      document.getElementById("last-alarm-time").textContent = msg.date;
+    } else {
+      alarmHeader.textContent = "OK";
+      alarmHeader.style.removeProperty('color');
+    }
+  })
+</script>
+<% include footer %>

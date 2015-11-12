@@ -1,0 +1,31 @@
+<% include head %>
+
+<div class="row vertical-center">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    <div class="frame">
+      <a class="btn btn-default btn-settings" href="/graph" role="button">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      </a>
+      <h2>Huiskamer</h2>
+      <hr/>
+      <h1><span id="temp"><%= temp %></span>&deg;C</h1>
+      <hr/>
+      <h2><span class="glyphicon glyphicon-tint" aria-hidden="true"></span><span id="hum"><%= hum %></span>%</h2>
+      <% include navigation %>
+    </div>
+  </div>
+</div>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+<script>
+  var socket = io();
+
+  socket.on('server-change',function (msg) {
+    document.getElementById("temp").textContent = msg.temp;
+    document.getElementById("hum").textContent = msg.hum;
+  });
+</script>
+
+<% include footer %>

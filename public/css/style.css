@@ -1,0 +1,90 @@
+body {
+    background-color: #dedfde;
+}
+
+.row {
+    text-align: center;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #30486c;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.alarm-icon {
+    position: relative;
+    top: 4px;
+}
+
+.frame {
+    background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
+    border-radius: 5px;
+    box-shadow: 4px 4px 7px #777, 3px -8px 16px #777;
+    display: block;
+    margin: 40px;
+    padding: 40px;
+}
+
+.navigation {
+    margin-top: 10px;
+}
+
+.btn-settings {
+    display: inline;
+    float: right;
+    font-size: 15px;
+    margin-left: -50px;
+    position: relative;
+    right: -30px;
+    top: -30px;
+}
+
+/********************************************************************
+ * Dark theme
+********************************************************************/
+body.dark {
+    background: #000;
+}
+
+body.dark h1, body.dark h2, body.dark p, body.dark .tick text {
+    color: #dedfde;
+    fill: #dedfde;
+    stroke: #dedfde;
+}
+
+body.dark .frame {
+    background: #333;
+    box-shadow: none;
+}
+
+body.dark .btn-default {
+    color: #FFF;
+    background-color: #424242;
+    border-color: #595959;
+}
+
+.vertical-center {
+    align-items: center;
+    display: flex;
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+}
+
+.glyphicon-tint {
+    position: relative;
+    right: 6px;
+    top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .frame {
+        margin: 0;
+    }
+}
