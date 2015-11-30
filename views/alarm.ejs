@@ -36,7 +36,8 @@
       alarmHeader.textContent = 'Alarm ';
       alarmHeader.appendChild(glyphicon);
       alarmHeader.style.color = 'rgb(251, 78, 78)';
-      document.getElementById("last-alarm-time").textContent = msg.date;
+      document.getElementById("last-alarm-date").textContent = msg.lastAlarmDate;
+      document.getElementById("last-alarm-time").textContent = msg.lastAlarmTime;
     } else {
       alarmHeader.textContent = "OK";
       alarmHeader.style.removeProperty('color');
